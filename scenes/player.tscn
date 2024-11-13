@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dp1k1ittgposc"]
+[gd_scene load_steps=18 format=3 uid="uid://dp1k1ittgposc"]
 
 [ext_resource type="Texture2D" uid="uid://db6n7sb8k75lo" path="res://assests/player/$ limp.png" id="1_l6s5g"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_w0h7e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5w1l"]
 atlas = ExtResource("1_l6s5g")
@@ -125,11 +126,11 @@ animations = [{
 size = Vector2(29, 56)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_w0h7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0rhjp")
 animation = &"move_down"
-frame_progress = 0.695067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1)
