@@ -5,7 +5,7 @@ extends Control
 func _ready():
 	EventController.connect("cpu_collected", on_event_cpus_collected)
 
-#assing the value to label
+#assigning the value to label
 func  on_event_cpus_collected(value: int) -> void:
 	label.text = str(value)
 
