@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl8fpcykyyyhm"]
+[gd_scene load_steps=6 format=3 uid="uid://cl8fpcykyyyhm"]
 
 [ext_resource type="Texture2D" uid="uid://4q77aqcqdis8" path="res://assests/strokespritesheet20121.png" id="1_yhthd"]
 [ext_resource type="PackedScene" uid="uid://dp1k1ittgposc" path="res://scenes/player.tscn" id="2_qe0o5"]
+[ext_resource type="PackedScene" uid="uid://bevshxf5g7oo3" path="res://scenes/cpu.tscn" id="3_mr2aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv4bg"]
 texture = ExtResource("1_yhthd")
@@ -1618,3 +1619,6 @@ position = Vector2(233, 205)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+
+[node name="Cpu" parent="." instance=ExtResource("3_mr2aj")]
+position = Vector2(448, 291)
