@@ -1,11 +1,14 @@
 class_name Player extends CharacterBody2D
 
-
+@onready var ray_cast_2d = $RayCast2D
 const speed = 300.0
 var player_state
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	Global.player = self
 
 
 func _physics_process(delta):
@@ -21,6 +24,9 @@ func _physics_process(delta):
 	move_and_slide()
 	#play the correct animation
 	play_anim(direction)
+	#turn raycast towards movement direction
+	if velocity != Vector2.ZERO:
+		ray_cast_2d.target_position = velocity.normalized() * 50
 
 func play_anim(dir):
 	if player_state == "idle":
