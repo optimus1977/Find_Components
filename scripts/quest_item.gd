@@ -18,3 +18,6 @@ func _process(delta):
 	# show texture in engine
 	if Engine.is_editor_hint():
 		sprite_2d.texture = item_icon
+
+func start_interact():
+	print("I am an item!")
