@@ -1,6 +1,11 @@
 class_name Player extends CharacterBody2D
 
 @onready var ray_cast_2d = $RayCast2D
+@onready var amount = $HUD/Points/Amount
+@onready var quest_tracker = $HUD/QuestTracker
+@onready var title = $HUD/QuestTracker/Details/Title
+@onready var objectives = $HUD/QuestTracker/Details/Objectives
+
 const speed = 300.0
 var player_state
 var can_move = true
@@ -9,7 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.player = self
-
+	quest_tracker.visible = false
 
 func _physics_process(delta):
 	#move player 

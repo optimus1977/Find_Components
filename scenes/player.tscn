@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dp1k1ittgposc"]
+[gd_scene load_steps=19 format=3 uid="uid://dp1k1ittgposc"]
 
 [ext_resource type="Texture2D" uid="uid://db6n7sb8k75lo" path="res://assests/player/$ limp.png" id="1_l6s5g"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w0h7e"]
+[ext_resource type="Texture2D" uid="uid://cghxhr50mn15j" path="res://assests/CPU.png" id="3_p14mi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5w1l"]
 atlas = ExtResource("1_l6s5g")
@@ -138,3 +139,70 @@ shape = SubResource("RectangleShape2D_beymw")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collide_with_areas = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Points" type="ColorRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 116.0
+grow_horizontal = 0
+color = Color(0.162066, 0.162066, 0.162066, 1)
+
+[node name="Icon" type="TextureRect" parent="HUD/Points"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 151.455
+grow_vertical = 2
+texture = ExtResource("3_p14mi")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Amount" type="Label" parent="HUD/Points"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="QuestTracker" type="ColorRect" parent="HUD"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 316.0
+offset_bottom = 216.0
+color = Color(0.141176, 0.141176, 0.141176, 0.788235)
+
+[node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.144687, 0.822987, 0.903755, 1)
+theme_override_font_sizes/font_size = 25
+text = "title"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Objectives" type="VBoxContainer" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+size_flags_vertical = 3
