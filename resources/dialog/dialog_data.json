@@ -1,0 +1,71 @@
+{
+	"npc_1": {
+		"tree": [
+			{
+				"branch_id": "npc_1_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text" : "Hello, student! What do you need?",
+						"options" : {
+							"Ask about computer" : "in progress",
+							"Receive Quests" : "give_quests",
+							"Say Goodbye" : "exit",
+						}
+					},
+					{
+						"state": "in progress",
+						"text" : "Look for CPUs!",
+						"options" : {
+							"Go Back" : "start",
+							"Receive Quests" : "give_quests",
+							"Say Goodbye" : "exit",
+						}
+					},
+					{
+						"state": "give_quests",
+						"text" : "Sure! You can find it in your Quest Log.",
+						"options" : {
+							"Go Back" : "start",
+							"Say Goodbye" : "exit",
+						}
+					},
+					{
+						"state": "end",
+						"text" : "Goodbye student!",
+						"options" : {}
+					},
+					{
+						"state": "exit",
+						"text" : "Come back soon student!",
+						"options" : {}
+					},
+				]
+			},
+			{
+				"branch_id": "npc_1_2",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_1_default",
+				"dialogs": []
+			},
+		],
+	},
+	"npc_2": {
+		"tree": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_2_2",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_2_default",
+				"dialogs": []
+			},
+		],
+	},
+}
