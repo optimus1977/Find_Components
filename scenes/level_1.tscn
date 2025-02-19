@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cl8fpcykyyyhm"]
+[gd_scene load_steps=11 format=3 uid="uid://cl8fpcykyyyhm"]
 
 [ext_resource type="Texture2D" uid="uid://4q77aqcqdis8" path="res://assests/strokespritesheet20121.png" id="1_yhthd"]
 [ext_resource type="PackedScene" uid="uid://dp1k1ittgposc" path="res://scenes/player.tscn" id="2_qe0o5"]
 [ext_resource type="PackedScene" uid="uid://bevshxf5g7oo3" path="res://scenes/cpu.tscn" id="3_mr2aj"]
+[ext_resource type="PackedScene" uid="uid://bxn423u6gwm8e" path="res://scenes/pause_menu.tscn" id="4_do8hr"]
 [ext_resource type="PackedScene" uid="uid://c5owb05xapq3o" path="res://scenes/cpu_ui.tscn" id="4_ti6ek"]
 [ext_resource type="PackedScene" uid="uid://dnnltayaurdea" path="res://scenes/npc.tscn" id="5_khe8x"]
 [ext_resource type="PackedScene" uid="uid://dd3ngn8pec8gr" path="res://scenes/quest_item.tscn" id="6_5nn16"]
@@ -1634,6 +1635,9 @@ position = Vector2(1036, 264)
 position = Vector2(667, 155)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_do8hr")]
+visible = false
 
 [node name="CpuUI" parent="CanvasLayer" instance=ExtResource("4_ti6ek")]
 
