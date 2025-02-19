@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://beay5iwj30nwd"]
+
+[ext_resource type="Texture2D" uid="uid://dncv1kx3y5444" path="res://assests/quiz/Bacground.png" id="1_bqh55"]
+[ext_resource type="Script" path="res://scripts/quizz.gd" id="1_emwvt"]
+[ext_resource type="FontFile" uid="uid://kw56f4qu3c41" path="res://Lovelo Black.otf" id="2_nfixd"]
+[ext_resource type="Texture2D" uid="uid://c3drrayfkdi7m" path="res://assests/quiz/PlayButton.png" id="3_17hbw"]
+
+[node name="Quizz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_emwvt")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bqh55")
+expand_mode = 2
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 50.0
+offset_right = 77.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 30
+text = "Question"
+uppercase = true
+
+[node name="FeedbackLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -22.0
+offset_right = 20.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 25
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 25
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 25
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 25
+
+[node name="PlayGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.5
+offset_right = 64.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_17hbw")
+
+[connection signal="pressed" from="PlayGame" to="." method="_on_play_game_pressed"]
