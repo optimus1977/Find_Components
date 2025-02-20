@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://beay5iwj30nwd"]
+[gd_scene load_steps=6 format=3 uid="uid://beay5iwj30nwd"]
 
 [ext_resource type="Texture2D" uid="uid://dncv1kx3y5444" path="res://assests/quiz/Bacground.png" id="1_bqh55"]
 [ext_resource type="Script" path="res://scripts/quizz.gd" id="1_emwvt"]
 [ext_resource type="FontFile" uid="uid://kw56f4qu3c41" path="res://Lovelo Black.otf" id="2_nfixd"]
 [ext_resource type="Texture2D" uid="uid://c3drrayfkdi7m" path="res://assests/quiz/PlayButton.png" id="3_17hbw"]
+[ext_resource type="AudioStream" uid="uid://bs46h6gjw4hor" path="res://sounds/game-music-loop-18-153392.mp3" id="5_tchi8"]
 
 [node name="Quizz" type="Control"]
 layout_mode = 3
@@ -112,5 +113,10 @@ offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("3_17hbw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tchi8")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="PlayGame" to="." method="_on_play_game_pressed"]
