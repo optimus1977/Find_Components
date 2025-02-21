@@ -61,11 +61,13 @@ var correct_index = 0  # Stores correct index after shuffle
 @onready var question_label = $QuestionLabel
 @onready var vbox_container = $VBoxContainer
 @onready var buttons = vbox_container.get_children()
+@onready var playgame_label = $PlayGameLabel
 @onready var feedback_label = $FeedbackLabel
 @onready var score_label = $ScoreLabel
 @onready var next_button = $PlayGame  # The "Next" button
 
 func _ready():
+	playgame_label.visible = false
 	next_button.visible = false  # Hide next button at start
 	load_question()
 
@@ -123,10 +125,12 @@ func end_quiz():
 	update_score_display()
 	question_label.text = "🎉 Quiz Completed!"
 	feedback_label.text = "Final Score: %d/%d" % [score, questions.size()]
+	playgame_label.text = "Press play game to continue!"
 	for button in buttons:
 		button.visible = false
 
 	next_button.visible = true  # Show the "Next" button
+	playgame_label.visible = true
 
 # When the next button is clicked, you can restart or load another scene
 func _on_play_game_pressed():

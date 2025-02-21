@@ -1,12 +1,75 @@
-[gd_scene load_steps=6 format=3 uid="uid://duxj1d32v8s2i"]
+[gd_scene load_steps=13 format=3 uid="uid://duxj1d32v8s2i"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_0sk3i"]
-[ext_resource type="Texture2D" uid="uid://moxwegbc76e8" path="res://assests/quiz/StartMenu.png" id="2_hk0y2"]
-[ext_resource type="Texture2D" uid="uid://lcredspsvpu6" path="res://assests/quiz/StartButton.png" id="3_bhxyn"]
-[ext_resource type="Texture2D" uid="uid://bvrro7uvr5qfc" path="res://assests/quiz/ExitButton.png" id="4_vjqgq"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_tl1h8"]
+[ext_resource type="Texture2D" uid="uid://dotxrf5wlv4yu" path="res://assests/quiz/StartMenuBig.png" id="2_p1ir6"]
+[ext_resource type="FontFile" uid="uid://kw56f4qu3c41" path="res://Lovelo Black.otf" id="3_nq5r8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqj5h"]
-texture = ExtResource("2_hk0y2")
+texture = ExtResource("2_p1ir6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtctd"]
+bg_color = Color(0, 0.100987, 0.170159, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(1, 0.291348, 0.539142, 1)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbab2"]
+bg_color = Color(1, 0.291348, 0.539142, 1)
+border_color = Color(0, 0.902433, 0.983854, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.00578383, 0.0996237, 0.146819, 0.6)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmr0o"]
+bg_color = Color(0.0076577, 0.304407, 0.805727, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.280295, 0.846681, 0.970272, 0.6)
+
+[sub_resource type="Theme" id="Theme_w4jg6"]
+Button/styles/hover = SubResource("StyleBoxFlat_xtctd")
+Button/styles/normal = SubResource("StyleBoxFlat_rbab2")
+Button/styles/pressed = SubResource("StyleBoxFlat_bmr0o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afcg8"]
+bg_color = Color(0, 0.100987, 0.170159, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(1, 0.291348, 0.539142, 1)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhjos"]
+bg_color = Color(1, 0.291348, 0.539142, 1)
+border_color = Color(0, 0.902433, 0.983854, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.00578383, 0.0996237, 0.146819, 0.6)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eg1hp"]
+bg_color = Color(0.0076577, 0.304407, 0.805727, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.280295, 0.846681, 0.970272, 0.6)
+
+[sub_resource type="Theme" id="Theme_oyval"]
+Button/styles/hover = SubResource("StyleBoxFlat_afcg8")
+Button/styles/normal = SubResource("StyleBoxFlat_rhjos")
+Button/styles/pressed = SubResource("StyleBoxFlat_eg1hp")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,7 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0sk3i")
+script = ExtResource("1_tl1h8")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -33,21 +96,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = 60.0
-offset_right = 64.0
-offset_bottom = 171.0
+offset_left = -175.0
+offset_top = -5.0
+offset_right = 202.0
+offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("3_bhxyn")
+size_flags_vertical = 3
+theme = SubResource("Theme_w4jg6")
+theme_override_fonts/font = ExtResource("3_nq5r8")
+theme_override_font_sizes/font_size = 50
+text = "Start"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("4_vjqgq")
+size_flags_vertical = 3
+theme = SubResource("Theme_oyval")
+theme_override_fonts/font = ExtResource("3_nq5r8")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
 
+[connection signal="mouse_entered" from="VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

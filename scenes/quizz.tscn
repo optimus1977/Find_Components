@@ -1,10 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://beay5iwj30nwd"]
+[gd_scene load_steps=9 format=3 uid="uid://beay5iwj30nwd"]
 
-[ext_resource type="Texture2D" uid="uid://dncv1kx3y5444" path="res://assests/quiz/Bacground.png" id="1_bqh55"]
 [ext_resource type="Script" path="res://scripts/quizz.gd" id="1_emwvt"]
+[ext_resource type="Texture2D" uid="uid://t0d1y3ju63om" path="res://assests/quiz/BackgroundBig.png" id="2_57fss"]
 [ext_resource type="FontFile" uid="uid://kw56f4qu3c41" path="res://Lovelo Black.otf" id="2_nfixd"]
-[ext_resource type="Texture2D" uid="uid://c3drrayfkdi7m" path="res://assests/quiz/PlayButton.png" id="3_17hbw"]
 [ext_resource type="AudioStream" uid="uid://bs46h6gjw4hor" path="res://sounds/game-music-loop-18-153392.mp3" id="5_tchi8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gowg5"]
+bg_color = Color(0, 0.100987, 0.170159, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(1, 0.291348, 0.539142, 1)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6uhf"]
+bg_color = Color(1, 0.291348, 0.539142, 1)
+border_color = Color(0, 0.902433, 0.983854, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.00578383, 0.0996237, 0.146819, 0.6)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fxgf"]
+bg_color = Color(0.0076577, 0.304407, 0.805727, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.280295, 0.846681, 0.970272, 0.6)
+
+[sub_resource type="Theme" id="Theme_8uys4"]
+Button/styles/hover = SubResource("StyleBoxFlat_gowg5")
+Button/styles/normal = SubResource("StyleBoxFlat_b6uhf")
+Button/styles/pressed = SubResource("StyleBoxFlat_5fxgf")
 
 [node name="Quizz" type="Control"]
 layout_mode = 3
@@ -22,22 +53,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_bqh55")
+texture = ExtResource("2_57fss")
 expand_mode = 2
 
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -77.0
-offset_top = 50.0
-offset_right = 77.0
-offset_bottom = 92.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Question"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="PlayGameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 226.0
+offset_top = 120.0
+offset_right = -240.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 40
+text = "Question"
+horizontal_alignment = 1
+autowrap_mode = 2
 uppercase = true
 
 [node name="FeedbackLabel" type="Label" parent="."]
@@ -50,17 +96,25 @@ offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+text = "Feedback"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 31.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+text = "Score"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -78,26 +132,27 @@ offset_right = 20.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="Button1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 
 [node name="Button4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nfixd")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 
 [node name="PlayGame" type="Button" parent="."]
 layout_mode = 1
@@ -106,13 +161,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -25.5
-offset_right = 64.0
-offset_bottom = 25.5
+offset_left = -188.5
+offset_top = -40.5
+offset_right = 188.5
+offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("3_17hbw")
+theme = SubResource("Theme_8uys4")
+theme_override_fonts/font = ExtResource("2_nfixd")
+theme_override_font_sizes/font_size = 50
+text = "Play Game"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tchi8")
