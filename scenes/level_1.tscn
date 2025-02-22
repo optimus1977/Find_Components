@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dp1k1ittgposc" path="res://scenes/player.tscn" id="2_qe0o5"]
 [ext_resource type="PackedScene" uid="uid://bevshxf5g7oo3" path="res://scenes/cpu.tscn" id="3_mr2aj"]
 [ext_resource type="PackedScene" uid="uid://bxn423u6gwm8e" path="res://scenes/pause_menu.tscn" id="4_do8hr"]
-[ext_resource type="PackedScene" uid="uid://dnnltayaurdea" path="res://scenes/npc.tscn" id="5_khe8x"]
+[ext_resource type="PackedScene" uid="uid://dnnltayaurdea" path="res://scenes/teacherc.tscn" id="5_4b32g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv4bg"]
 texture = ExtResource("1_yhthd")
@@ -1636,5 +1636,5 @@ position = Vector2(667, 155)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_do8hr")]
 visible = false
 
-[node name="npc" parent="." instance=ExtResource("5_khe8x")]
-position = Vector2(363, 125)
+[node name="TeacherC" parent="." instance=ExtResource("5_4b32g")]
+position = Vector2(513, 138)

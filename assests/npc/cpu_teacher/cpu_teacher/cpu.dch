@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"prefix": "CPU",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": "CPU"
+},
+"default_portrait": "Cpu",
+"description": "CPU",
+"display_name": "cpu",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Cpu": {
+"export_overrides": {
+"image": "\"res://assests/CPU.png\""
+},
+"mirror": false,
+"offset": Vector2(-60, -160),
+"scale": 0.2,
+"scene": ""
+}
+},
+"scale": 1.0
+}

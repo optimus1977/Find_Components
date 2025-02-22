@@ -61,3 +61,5 @@ func _input(event):
 					#to-do checking if item in needed for quest
 					#to-do remove item
 					target.start_interact()
+func player():
+	pass
