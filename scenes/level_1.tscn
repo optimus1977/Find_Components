@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl8fpcykyyyhm"]
+[gd_scene load_steps=8 format=3 uid="uid://cl8fpcykyyyhm"]
 
 [ext_resource type="Texture2D" uid="uid://4q77aqcqdis8" path="res://assests/strokespritesheet20121.png" id="1_yhthd"]
 [ext_resource type="PackedScene" uid="uid://dp1k1ittgposc" path="res://scenes/player.tscn" id="2_qe0o5"]
 [ext_resource type="PackedScene" uid="uid://bevshxf5g7oo3" path="res://scenes/cpu.tscn" id="3_mr2aj"]
 [ext_resource type="PackedScene" uid="uid://bxn423u6gwm8e" path="res://scenes/pause_menu.tscn" id="4_do8hr"]
-[ext_resource type="PackedScene" uid="uid://c5owb05xapq3o" path="res://scenes/cpu_ui.tscn" id="4_ti6ek"]
 [ext_resource type="PackedScene" uid="uid://dnnltayaurdea" path="res://scenes/npc.tscn" id="5_khe8x"]
-[ext_resource type="PackedScene" uid="uid://dd3ngn8pec8gr" path="res://scenes/quest_item.tscn" id="6_5nn16"]
-[ext_resource type="Texture2D" uid="uid://cghxhr50mn15j" path="res://assests/CPU.png" id="7_1o6qq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv4bg"]
 texture = ExtResource("1_yhthd")
@@ -1639,11 +1636,5 @@ position = Vector2(667, 155)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_do8hr")]
 visible = false
 
-[node name="CpuUI" parent="CanvasLayer" instance=ExtResource("4_ti6ek")]
-
 [node name="npc" parent="." instance=ExtResource("5_khe8x")]
 position = Vector2(363, 125)
-
-[node name="QuestItem" parent="." instance=ExtResource("6_5nn16")]
-position = Vector2(372, 212)
-item_icon = ExtResource("7_1o6qq")
