@@ -1,9 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxn423u6gwm8e"]
+[gd_scene load_steps=8 format=3 uid="uid://bxn423u6gwm8e"]
 
-[ext_resource type="Texture2D" uid="uid://bj1r4t46kxumm" path="res://assests/pausemenu/ResumeButton.png" id="1_26mkq"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_qbkdl"]
-[ext_resource type="Texture2D" uid="uid://c6dye6hnqs6tv" path="res://assests/pausemenu/RestartButton.png" id="2_tg0xb"]
-[ext_resource type="Texture2D" uid="uid://cnkuybak4j8fl" path="res://assests/pausemenu/QuitButton.png" id="3_gpsd1"]
+[ext_resource type="FontFile" uid="uid://kw56f4qu3c41" path="res://Lovelo Black.otf" id="2_a5j35"]
+[ext_resource type="Texture2D" uid="uid://cco3fsvjhncmy" path="res://Pause_menu.png" id="2_i80bx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g47o8"]
+bg_color = Color(0, 0.100987, 0.170159, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(1, 0.291348, 0.539142, 1)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5dkw"]
+bg_color = Color(1, 0.291348, 0.539142, 1)
+border_color = Color(0, 0.902433, 0.983854, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.00578383, 0.0996237, 0.146819, 0.6)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2w0tl"]
+bg_color = Color(0.0076577, 0.304407, 0.805727, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.280295, 0.846681, 0.970272, 0.6)
+
+[sub_resource type="Theme" id="Theme_w0vnf"]
+Button/styles/hover = SubResource("StyleBoxFlat_g47o8")
+Button/styles/normal = SubResource("StyleBoxFlat_o5dkw")
+Button/styles/pressed = SubResource("StyleBoxFlat_2w0tl")
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -29,6 +60,12 @@ offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 600.0
+texture = ExtResource("2_i80bx")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -36,25 +73,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -77.5
-offset_right = 64.0
-offset_bottom = 77.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
+alignment = 1
 
 [node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("1_26mkq")
+size_flags_vertical = 3
+theme = SubResource("Theme_w0vnf")
+theme_override_fonts/font = ExtResource("2_a5j35")
+theme_override_font_sizes/font_size = 25
+text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("2_tg0xb")
+size_flags_vertical = 3
+theme = SubResource("Theme_w0vnf")
+theme_override_fonts/font = ExtResource("2_a5j35")
+theme_override_font_sizes/font_size = 25
+text = "Restart"
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("3_gpsd1")
+size_flags_vertical = 3
+theme = SubResource("Theme_w0vnf")
+theme_override_fonts/font = ExtResource("2_a5j35")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

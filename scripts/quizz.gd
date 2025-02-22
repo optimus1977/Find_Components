@@ -100,10 +100,10 @@ func load_question():
 
 func _on_answer_selected(choice_index):
 	if choice_index == correct_index:  # ✅ Now comparing with correct_index
-		feedback_label.text = "✅ Correct!"
+		feedback_label.text = " Correct!"
 		score += 1
 	else:
-		feedback_label.text = "❌ Wrong! Try again."
+		feedback_label.text = " Wrong! Try again."
 
 	update_score_display()
 
