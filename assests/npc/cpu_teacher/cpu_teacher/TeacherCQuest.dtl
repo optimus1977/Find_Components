@@ -1,10 +1,22 @@
 join teacherc left
 Alright, [Student’s Name], I have a special task for you. In the next classroom, some CPUs have been scattered around. Your mission is to find them all and bring them back to me.
 join cpu right
-Scattered? How did that happen?
-Let’s just say... a little experiment got out of hand. But never mind that! You need to hurry before someone steps on them. Be sure to check every corner, under the desks, and even behind objects!
+This is what a CPU looks like.
 leave cpu
+leave teacherc
+join student right
+Scattered? How did that happen?
+leave student
+join teacherc left
+Let’s just say... a little experiment got out of hand. But never mind that! You need to hurry before someone steps on them. Be sure to check every corner, under the desks, and even behind objects!
+leave teacherc
+join student right
 Got it! How many CPUs do I need to find?
+leave student
+join teacherc left
 There should be [X] CPUs in total. Keep an eye out and don’t leave any behind. Once you have them all, come back here, and I’ll have something for you in return!
+leave teacherc
+join student right
 A reward? Now we’re talking! Alright, I’ll find them!
+join teacherc left
 That’s the spirit! Good luck, and don’t get distracted!

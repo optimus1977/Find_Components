@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v73711of3g0y"
-path="res://.godot/imported/Cpu.png-7225339f8a04be61302cd1bf760bab8b.ctex"
+uid="uid://bsaboo6lqr1cx"
+path="res://.godot/imported/Computer Room Spritesheet 240.png-66f75f004934a28260098020e885a1d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/Cpu.png"
-dest_files=["res://.godot/imported/Cpu.png-7225339f8a04be61302cd1bf760bab8b.ctex"]
+source_file="res://assests/Computer Room Spritesheet 240.png"
+dest_files=["res://.godot/imported/Computer Room Spritesheet 240.png-66f75f004934a28260098020e885a1d1.ctex"]
 
 [params]
 

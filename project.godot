@@ -26,6 +26,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "cpu": "res://assests/npc/cpu_teacher/cpu_teacher/cpu.dch",
+"student": "res://assests/npc/cpu_teacher/cpu_teacher/student.dch",
 "teacherc": "res://assests/npc/cpu_teacher/cpu_teacher/teacherc.dch"
 }
 directories/dtl_directory={

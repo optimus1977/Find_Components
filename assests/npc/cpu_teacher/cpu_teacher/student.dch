@@ -4,26 +4,26 @@
 "_translation_id": "",
 "color": Color(1, 1, 1, 1),
 "custom_info": {
-"prefix": "CPU",
+"prefix": "Student",
 "sound_mood_default": "",
 "sound_moods": {},
 "style": "",
-"suffix": "CPU"
+"suffix": "Student"
 },
-"default_portrait": "Cpu",
-"description": "CPU",
-"display_name": "cpu",
+"default_portrait": "StudentHead",
+"description": "",
+"display_name": "student",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Cpu": {
+"StudentHead": {
 "export_overrides": {
-"image": "\"res://assests/Cpu.png\""
+"image": "\"res://assests/student_head.png\""
 },
 "mirror": false,
-"offset": Vector2(-40, -160),
-"scale": 0.2,
+"offset": Vector2(-40, -100),
+"scale": 0.5,
 "scene": ""
 }
 },

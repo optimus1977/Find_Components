@@ -19,7 +19,7 @@
 "portraits": {
 "TeacherC": {
 "export_overrides": {
-"image": "\"res://assests/TeacherC_dialogue.png\""
+"image": "\"res://assests/TeacherC.png\""
 },
 "mirror": false,
 "offset": Vector2(40, -150),
