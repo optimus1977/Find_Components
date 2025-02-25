@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6fs8"]
 size = Vector2(36, 35)
 
-[node name="Cpu" type="Node2D"]
+[node name="Cpu" type="Node2D" groups=["item"]]
 script = ExtResource("1_khc5n")
 value = null
 

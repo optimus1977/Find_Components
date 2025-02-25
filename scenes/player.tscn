@@ -151,7 +151,7 @@ offset_top = 16.0
 offset_right = -16.0
 offset_bottom = 84.0
 grow_horizontal = 0
-color = Color(0.162066, 0.162066, 0.162066, 1)
+color = Color(0.160784, 0.160784, 0.160784, 0)
 
 [node name="Icon" type="TextureRect" parent="HUD/Points"]
 layout_mode = 1

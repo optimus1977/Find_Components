@@ -1,5 +1,6 @@
 extends Node
 
+
 var total_cpus: int = 0
 
 #fuction to calculate the cpus collected
