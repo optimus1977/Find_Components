@@ -99,15 +99,27 @@ func load_question():
 	update_score_display()
 
 func _on_answer_selected(choice_index):
+	# Disable all buttons to prevent multiple selections
+	for button in buttons:
+		button.disabled = true
+	
 	if choice_index == correct_index:  # ✅ Now comparing with correct_index
 		feedback_label.text = " Correct!"
 		score += 1
+		buttons[choice_index].modulate = Color(0, 1, 0)  # Green for correct
 	else:
-		feedback_label.text = " Wrong! Try again."
-
+		feedback_label.text = " Wrong!"
+		buttons[choice_index].modulate = Color(1, 0, 0)  # Red for wrong
+		buttons[correct_index].modulate = Color(0, 1, 0)  # Highlight the correct answer
 	update_score_display()
 
 	await get_tree().create_timer(1.5).timeout
+	
+	# Reset button colors and states before next question
+	for button in buttons:
+		button.modulate = Color(1, 1, 1)  # Reset to white (default)
+		button.disabled = false  # Enable buttons again
+	
 	next_question()
 
 func next_question():
@@ -123,7 +135,7 @@ func update_score_display():
 
 func end_quiz():
 	update_score_display()
-	question_label.text = "🎉 Quiz Completed!"
+	question_label.text = "Quiz Completed!"
 	feedback_label.text = "Final Score: %d/%d" % [score, questions.size()]
 	playgame_label.text = "Press play game to continue!"
 	for button in buttons:
