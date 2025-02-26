@@ -21,6 +21,7 @@ EventController="*res://scripts/event_controller.gd"
 GameController="*res://scripts/game_controller.gd"
 Global="*res://scripts/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://scenes/game_manager.tscn"
 
 [dialogic]
 

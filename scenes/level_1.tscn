@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bsaboo6lqr1cx" path="res://assests/Computer Room Spritesheet 240.png" id="2_gxi2p"]
 [ext_resource type="PackedScene" uid="uid://dp1k1ittgposc" path="res://scenes/player.tscn" id="2_qe0o5"]
 [ext_resource type="Script" path="res://scripts/playercamera.gd" id="3_f7jd1"]
-[ext_resource type="PackedScene" uid="uid://bevshxf5g7oo3" path="res://scenes/cpu.tscn" id="3_mr2aj"]
 [ext_resource type="PackedScene" uid="uid://bxn423u6gwm8e" path="res://scenes/pause_menu.tscn" id="4_do8hr"]
 [ext_resource type="PackedScene" uid="uid://dnnltayaurdea" path="res://scenes/teacherc.tscn" id="5_4b32g"]
+[ext_resource type="Script" path="res://scripts/quest.gd" id="10_a4r10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv4bg"]
 texture = ExtResource("1_yhthd")
@@ -9527,19 +9527,20 @@ zoom = Vector2(2, 2)
 editor_draw_limits = true
 script = ExtResource("3_f7jd1")
 
-[node name="Cpu" parent="." instance=ExtResource("3_mr2aj")]
-position = Vector2(1035, 363)
-
-[node name="Cpu2" parent="." instance=ExtResource("3_mr2aj")]
-position = Vector2(1033, 263)
-
-[node name="Cpu3" parent="." instance=ExtResource("3_mr2aj")]
-position = Vector2(1034, 171)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_do8hr")]
 visible = false
 
-[node name="TeacherC" parent="." instance=ExtResource("5_4b32g")]
-position = Vector2(513, 89)
+[node name="TeacherC" parent="." node_paths=PackedStringArray("quest") instance=ExtResource("5_4b32g")]
+position = Vector2(423, 213)
+quest = NodePath("CpuQuest")
+
+[node name="CpuQuest" type="Node2D" parent="TeacherC"]
+script = ExtResource("10_a4r10")
+quest_name = "Find 3 CPUs"
+quest_description = "Search next classroom to find the CPUs!"
+reached_goal_text = "Often referred to as the brain and heart of all digital systems, a CPU is responsible for doing all the work. It performs every single action a computer does and executes programs.           Return to Teacher."
+
+[node name="CpuSpawnPoint" type="Marker2D" parent="TeacherC"]
+position = Vector2(710, 69)

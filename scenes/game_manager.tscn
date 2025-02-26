@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunhsjvugbuue"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_lcdhd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dqm5q"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_lcdhd")
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="QuestBox"]
+modulate = Color(0.0392157, 0.0392157, 0.0392157, 0.188235)
+position = Vector2(567, 121)
+scale = Vector2(637.25, 226.75)
+texture = SubResource("CanvasTexture_dqm5q")
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
+offset_left = 255.0
+offset_top = 14.0
+offset_right = 878.0
+offset_bottom = 58.0
+theme_override_colors/default_color = Color(0.560955, 0.560955, 0.560955, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Quest Title"
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
+offset_left = 253.0
+offset_top = 56.0
+offset_right = 876.0
+offset_bottom = 226.0
+theme_override_colors/default_color = Color(0.955963, 0.955963, 0.955963, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Quest Description"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Components" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "CPU"

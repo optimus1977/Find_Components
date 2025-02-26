@@ -1,9 +1,10 @@
-extends Node2D
+extends Area2D
 
+var quest: Quest
 
 @export var value: int = 1
 
-func _on_area_2d_body_entered(body):
+func _on_body_entered(body):
 	if body is Player:
-		GameController.cpus_collected(value)
-		self.queue_free()
+		quest.reached_goal()
+		queue_free()
